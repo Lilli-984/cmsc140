@@ -16,13 +16,18 @@ def is_name(char, name):
 
 
 def is_choice(choose):
-    choice_regex = re.compile(r'(A|B|C|D)')
-    is_alpha = choice_regex.search(choose)
-    while not is_alpha :
-        print(is_alpha)
-        print("Thats not a choice. Please choose A, B, C, or D.")
-        choose = input().upper()
-        is_alpha = choice_regex.search(choose)
+    is_alpha= False
+    choose = choose.upper()
+    match choose:
+        case 'A'|'B'|'C'|'D':
+            is_alpha = True
+        case _:
+            while not is_alpha :
+                print("Thats not a choice. Please choose A, B, C, or D.")
+                choose = input().upper()
+                match choose:
+                    case 'A'|'B'|'C'|'D':
+                        is_alpha = True
     return choose
   
 startyear= 2017
@@ -36,7 +41,7 @@ def addMonths(time,start):
             left -=1
     start = 1
     start+=left
-    return startBi
+    return start
 
 
 dates = {"start":{"month":10,"year":2017},"proposal":{"month":0,"year":0}}

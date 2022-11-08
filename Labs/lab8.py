@@ -55,7 +55,7 @@ for name in student_names:
 #  the value is the student's letter grade 
 grades = {}
 
-for student, avg in students.items():
+for student, avg in students.items(): #added avg and .items() to be able to call the value as a local variable.
     # this should follow the grading scheme outlined above:
         # 90+	A
         # 80-89	B

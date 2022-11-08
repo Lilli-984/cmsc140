@@ -20,14 +20,24 @@ is_name("main",name)
  """
 
 def is_choice(choose):
-    choice_regex = re.compile(r'(A|B|C|D)')
-    is_alpha = choice_regex.search(choose)
-    while not is_alpha :
-        print(is_alpha)
-        print("Thats not a choice. Please choose A, B, C, or D.")
-        choose = input().upper()
-        is_alpha = choice_regex.search(choose)
-  
+    is_alpha= False
+    choose = choose.upper()
+    match choose:
+        case 'A'|'B'|'C'|'D':
+            is_alpha = True
+        case _:
+            while not is_alpha :
+        #print(is_alpha)
+                print("Thats not a choice. Please choose A, B, C, or D.")
+                choose = input().upper()
+                match choose:
+                    case 'A'|'B'|'C'|'D':
+                        is_alpha = True
+    # choice_regex = re.compile(r'(A|B|C|D)')
+    # is_alpha = choice_regex.search(choose)
+    
+        #is_alpha = choice_regex.search(choose)
+    return choose
 
     # choice = False
     # if choose == "A" or  "B" or "C" or "D":
@@ -35,6 +45,11 @@ def is_choice(choose):
     # while choice == False:
     #     print("Thats not a choice. Please choose A, B, C, or D.")
     #     choose = input().upper()      
+
+
+print("choice: ")
+choose = input()
+print(is_choice(choose))
 
 def ch1():
     print('ch1')

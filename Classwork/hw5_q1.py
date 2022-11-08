@@ -1,4 +1,3 @@
-this_string = "Today is cold"
 
 def alt_case(string):
     new_string = ""
@@ -12,6 +11,3 @@ def alt_case(string):
             this = not this
         
     return new_string
-
-new_string = alt_case(this_string)
-print(new_string)
