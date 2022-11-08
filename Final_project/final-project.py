@@ -36,7 +36,7 @@ def addMonths(time,start):
             left -=1
     start = 1
     start+=left
-    return start
+    return startBi
 
 
 dates = {"start":{"month":10,"year":2017},"proposal":{"month":0,"year":0}}
@@ -137,7 +137,7 @@ def game():
     print(f'{characters["main"]} and {characters["interest"]} are official college grads. There have been talks of children, moving in together, and ...marraige')
     print("You never thought the time would come when you would be so certain about how you wanted to spend the rest of your life. ")
     print("And now you can't wait to tell the world of your discovery. You want to propose before you move in together. \nHow long would you have been dating before the engagement?")
-    print("Please enter \'_ months\' or \'_ years\'")
+    print("Please enter an amount of time followed by \'months\' or \'years\'. Ex.: \'15 months\' , \'3 years\'")
     time, sect = input().split()
     time = int(time)
     monthRegex = re.compile(r'month(s)?', re.I)
